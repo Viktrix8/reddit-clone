@@ -7,7 +7,7 @@ import client from '../apollo-client'
 import Header from '../components/Header'
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps: { sessions, ...pageProps } }: AppProps) {
+function MyApp({ Component, pageProps: { sessions, ...pageProps } }: any) {
   return (
     <ApolloProvider client={client}>
       <SessionProvider session={sessions}>
