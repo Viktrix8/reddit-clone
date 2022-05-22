@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client'
 
 import { GET_ALL_POSTS, GET_ALL_POSTS_BY_TOPIC } from '../graphql/queries'
+import { Post as DbPost } from '../typings'
 import Post from './Post'
 
 type Props = {
@@ -16,7 +17,7 @@ const Feed = ({ topic }: Props) => {
         },
       })
 
-  const posts: Post[] = !topic ? data?.getPostList : data?.getPostListByTopic
+  const posts: DbPost[] = !topic ? data?.getPostList : data?.getPostListByTopic
 
   return (
     <div className="mt-5 flex-1 space-y-4">
